@@ -9,12 +9,11 @@ int log(char data[16],char comment[126], ...){
 count_log_F++;
 time_t timer;
 struct tm *t_st;
-FILE *fp=fopen("log.txt","a+");
+FILE *fp=fopen("histry.PLDB","a+");
 time(&timer); /*get time*/
-fprintf(fp,"data:%s\n#time %s%s\n",data,ctime(&timer),comment);
+fprintf(fp,"data:%s\n#time %s%s[%d]\n",data,ctime(&timer),comment,count_log_F++);
 fclose(fp);
 }
 
 int main(int argc,char *argv[]){
-log("boot","=NONE=");
 }
